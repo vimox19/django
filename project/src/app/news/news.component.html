@@ -1,0 +1,25 @@
+<br>
+
+<br>
+<div class="container">
+  <app-search></app-search>
+  <h3 class="col-md-12 text-center">Elasticsearch server status: {{status}}</h3>
+  <br>
+<div class="card-deck">
+   <div class="card"  *ngFor = "let N of news | paginate: { itemsPerPage: 4, currentPage: page , totalItems:totalLength }  "> 
+    <img src="https://www.tbstat.com/cdn-cgi/image/w=353/wp/uploads/2021/10/210930_Bitcoin_Funding_General-1200x675.jpg" class="card-img-top" alt="...">
+    <div class="card-body d-flex flex-column justify-content-between">
+      <h5 class="card-title">{{N.Title}}</h5>
+      <p class="card-text">{{N.Content}}</p>
+      <p class="card-text"><small class="text-muted">{{N.Date}}</small></p>
+      <button class="btn btn-primary "> read more  <a href="{{N.Link}}"> </a></button>
+
+    </div>
+
+  </div>
+ 
+</div>
+<br>
+<pagination-controls (pageChange)="page = $event" ></pagination-controls>
+</div>
+

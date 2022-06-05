@@ -1,0 +1,52 @@
+<p-table [value]="departments"   responsiveLayout="scroll" dataKey="id"
+    [paginator]="true" [rows]="10" [totalRecords]="totalRecords" [globalFilterFields]="['name','price', 'symbol']">
+    <ng-template pTemplate="header">
+        <tr>
+            <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
+            <th pSortableColumn="symbol">Symbol <p-sortIcon field="symbol"></p-sortIcon></th>
+            <th pSortableColumn="coin_price">Prix <p-sortIcon field="coin_price"></p-sortIcon></th>
+            <th pSortableColumn="market_cap">Market Cap <p-sortIcon field="market_cap"></p-sortIcon></th>
+            <th pSortableColumn="add_date">Date D'ajoute <p-sortIcon field="add_date"></p-sortIcon></th>
+            <th pSortableColumn="total_supply">Total Supply <p-sortIcon field="total_supply"></p-sortIcon></th>
+            <th pSortableColumn="circulating_supply">Circulating Supply <p-sortIcon field="circulating_supply"></p-sortIcon></th>
+
+        </tr>
+        <tr>
+         
+            <th>
+                <p-columnFilter type="text" field="name"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="symbol"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="coin_price"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="market_cap"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="date" field="add_date"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="total_supply"></p-columnFilter>
+            </th>
+            <th>
+                <p-columnFilter type="text" field="circulating_supply"></p-columnFilter>
+            </th>
+           
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-departments>
+        <tr>
+            <td>{{departments.name}}</td>
+            <td>{{departments.symbol}}</td>
+            <td>{{departments.coin_price}}</td>
+            <td>{{departments.market_cap}}</td>
+            <td>{{departments.add_date | date :'short'}}</td>
+            <td>{{departments.total_supply}}</td>
+            <td>{{departments.circulating_supply}}</td>
+
+        </tr>
+    </ng-template>
+</p-table>

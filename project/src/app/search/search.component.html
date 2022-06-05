@@ -1,0 +1,27 @@
+  
+  
+<div style="margin-top:20px">
+    <nav class="navbar navbar-light bg-light">
+        <form class="form-inline">
+          <input class="form-control mr-sm-2" type="search" (keyup)="search($event)"  placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </nav>
+ 
+        <div class="card" style="width: 18rem;">
+            <div class="card"  *ngFor="let t of contentSources" >
+              <img src="https://www.tbstat.com/cdn-cgi/image/w=353/wp/uploads/2021/10/210930_Bitcoin_Funding_General-1200x675.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{t._source.Title}}</h5>
+                <p class="card-text">{{t._source.Content}}</p>
+              </div>
+            </div>
+           
+          </div>
+    
+  
+   
+  </div>
+  <br>
+
+ 
